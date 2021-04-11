@@ -1,24 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import'bootstrap/dist/css/bootstrap.min.css';
+import {BrowserRouter , Route,Switch } from 'react-router-dom';
+import AdminPage from './components/AdminPage';
+import LoginPage from './components/LoginPage';
+import RegisterPage from './components/RegisterPage';
+import AddItem from './components/AddItem';
+import HeaderPage from './components/HeaderPage';
+import ShowItem from './components/ShowItem'
+import CustomerDash from './components/CustomerDash'
+import AdminShowItems from './components/AdminShowItems'
+import AdminAuctionPage from './components/AdminAuctionPage'
+
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+
+      <div className="container">
+      <Switch>
+       <Route path="/" exact component={LoginPage} />
+       <Route path="/register"  exact component={RegisterPage} />
+       <Route path="/admin"  exact component={AdminPage} />
+       <Route path="/AddItem"  exact component={AddItem} />
+       <Route path="/dashboard"  exact component={HeaderPage} />
+       <Route path="/showitems"  exact component={ShowItem} />
+       <Route path="/customerdashboard"  exact component={CustomerDash} />
+       <Route path="/adminshowitems"  exact component={AdminShowItems} />
+       <Route path="/adminauctionpage/:id"  exact component={AdminAuctionPage} />
+
+
+
+
+
+
+    </Switch>
+      </div>
+    </BrowserRouter>
+
   );
 }
 
