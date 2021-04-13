@@ -1,7 +1,7 @@
 import React,{useState,useEffect} from 'react';
 import './show.css';
 import axios from 'axios';
-import HeaderPage from '../components/HeaderPage';
+import CustomerDash from '../components/CustomerDash';
 
 const ShowItem=()=> { 
     const [data, setData] = useState({
@@ -23,7 +23,7 @@ const ShowItem=()=> {
 
     return(
         <div>
-        <HeaderPage/>
+        <CustomerDash/>
         <table class="table table-hover">
             <thead>
           <tr>

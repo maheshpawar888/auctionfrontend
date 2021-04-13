@@ -9,6 +9,10 @@ import ShowItem from './components/ShowItem'
 import CustomerDash from './components/CustomerDash'
 import AdminShowItems from './components/AdminShowItems'
 import AdminAuctionPage from './components/AdminAuctionPage'
+import ShowAuction from './components/ShowAuction'
+import FinalAuction from './components/FinalAuction'
+
+
 
 
 
@@ -27,6 +31,8 @@ function App() {
        <Route path="/customerdashboard"  exact component={CustomerDash} />
        <Route path="/adminshowitems"  exact component={AdminShowItems} />
        <Route path="/adminauctionpage/:id"  exact component={AdminAuctionPage} />
+       <Route path="/showauction"  exact component={ShowAuction} />
+       <Route path="/finalauction/:id"  exact component={FinalAuction} />
 
 
 
