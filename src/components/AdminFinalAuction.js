@@ -2,40 +2,18 @@ import React,{useState,useEffect} from 'react';
 import axios from 'axios';
 import {useParams} from 'react-router';
 
-import CustomerDash from '../components/CustomerDash';
+import Dashboard from '../components/HeaderPage';
 
-const FinalAuction = () =>{
+const AdminFinalAuction = () =>{
     const id = useParams()
 
         const [data, setData] = useState({
           items: [],
           itemName:'AAA',
           itemImg:'',
-          reservePrice:2000,
-          price:''
+          reservePrice:2000
       })
-
-      
-
-
-    const onsubmit=async (e) => {
-        try {
-            e.preventDefault();
-            if(price > reservePrice){
-                console.log(price)
-            }else{
-                console.log(reservePrice)
-            }
-            setData({
-                ...data,
-                price:''})  
-        }catch(e){
-            //DO nothing
-        }
-    }
-
-
-      const { itemName,itemImg,reservePrice,price } = data;
+      const { itemName,itemImg,reservePrice } = data;
     const onChange = e => setData({...data,[e.target.name]:e.target.value}) 
 
       const getItem = () => {
@@ -59,7 +37,7 @@ const FinalAuction = () =>{
       },[])
     return (
         <div>
-          <CustomerDash/> 
+          <Dashboard /> 
 
             <div className="row">
             <div className="col-6">
@@ -82,22 +60,40 @@ const FinalAuction = () =>{
                         >{reservePrice}</h6></td>
                     </tr>
                     <tr>
-                        <td><h5><b>Your cost :</b></h5></td>
-                        <td><input type="text"
-                            value = {price}
-                            onChange={e=>onChange(e)}
-                            name="price"
-                        /></td>
-                    </tr>
-                    <tr>
-                        <td colspan="2"><inputType className="btn btn-danger"  
-                        onClick={(e) => onsubmit(e) } type="submit" /></td>
+                        <button className="btn btn-block btn-danger"> Stop Auction </button>
                     </tr>
                 </table>
             </div>
         </div>
+
+        <div className="row text-center">
+            <div className="col-12">
+            <table class="table">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">Customer Name</th>
+                <th scope="col">Price</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Mark</td>
+                <td>Otto</td>
+              </tr>
+              <tr>
+                <td>Jacob</td>
+                <td>Thornton</td>
+              </tr>
+              <tr>
+                <td>Larry</td>
+                <td>the Bird</td>
+              </tr>
+            </tbody>
+          </table>         
+        </div>
+        </div>           
         </div>
     )
 }
 
-export default FinalAuction;
+export default AdminFinalAuction;

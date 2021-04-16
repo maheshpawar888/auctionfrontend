@@ -11,9 +11,8 @@ import AdminShowItems from './components/AdminShowItems'
 import AdminAuctionPage from './components/AdminAuctionPage'
 import ShowAuction from './components/ShowAuction'
 import FinalAuction from './components/FinalAuction'
-
-
-
+import AdminShowAuction from './components/AdminShowAuction'
+import AdminFinalAuction from './components/AdminFinalAuction'
 
 
 function App() {
@@ -33,6 +32,8 @@ function App() {
        <Route path="/adminauctionpage/:id"  exact component={AdminAuctionPage} />
        <Route path="/showauction"  exact component={ShowAuction} />
        <Route path="/finalauction/:id"  exact component={FinalAuction} />
+       <Route path="/adminfinalauction/:id"  exact component={AdminFinalAuction} />
+       <Route path="/adminshowauction" component={AdminShowAuction} />
 
 
 

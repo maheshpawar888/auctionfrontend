@@ -1,8 +1,8 @@
 import React,{useState,useEffect} from 'react';
 import axios from 'axios';
-import CustomerDash from '../components/CustomerDash';
+import Dashboard from '../components/HeaderPage';
 
-const ShowAuction = () =>{
+const AdminShowAuction = () =>{
         const [data, setData] = useState({
           items: []
       })
@@ -21,7 +21,7 @@ const ShowAuction = () =>{
       },[])
     return (
         <div>
-          <CustomerDash/> 
+          <Dashboard /> 
             {/* <h1>Show Auction</h1> */}
 
             <table class="table table-hover">
@@ -37,9 +37,9 @@ const ShowAuction = () =>{
 
                 <tr>
                   <td>{item.itemName}</td>
-                  <td><img src={item.itemImg} alt="Item Image"/></td>
+                  <td><img src={item.itemImg}/></td>
                   <td>{item.reservePrice}</td>
-                  <td><a href={'/finalauction/'+item.id} className="btn btn-success">Join</a></td>
+                  <td><a href={'/adminfinalauction/'+item.id} className="btn btn-success"> View </a></td>
                 </tr>
                 ))}
          
@@ -50,4 +50,4 @@ const ShowAuction = () =>{
     )
 }
 
-export default ShowAuction;
+export default AdminShowAuction;

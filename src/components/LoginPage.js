@@ -36,7 +36,7 @@ const LoginPage=()=> {
             const res = await axios.post('http://localhost:5000/login',body , config)
 
             console.log(res)
-            if(res.data.status ==1 ) {
+            if(res.data.status === 1 ) {
                 history.push('/customerdashboard');
                 
             } else {
